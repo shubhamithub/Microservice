@@ -24,8 +24,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getById(String userId) {
+    public User getById(String userId) {
         return userRepository.findById(userId).orElseThrow(()->
-                ResourceNotFoundException(""))
+             new ResourceNotFoundException("User With given id is not found : "+ userId));
     }
 }
