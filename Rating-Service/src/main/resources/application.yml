@@ -1,6 +1,8 @@
 spring:
   application:
     name: Rating-Service
+  config:
+    import: optional:configserver:http://localhost:8085
 
   datasource:
     url: jdbc:mysql://localhost:3306/RatingMicroservice?useSSL=false&serverTimezone=UTC
@@ -29,11 +31,11 @@ logging:
             sql:
               BasicBinder: TRACE
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
